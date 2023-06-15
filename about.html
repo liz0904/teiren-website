@@ -1,193 +1,275 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <title>테이렌 TEIREN</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/teiren-icon.png') }}" />
+    <!-- Custom NAVER font-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="{{ url_for('static', filename='css/teiren.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Teiren js-->
+    <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+    <!-- Wow.js-->
+    <script src="{{ url_for('static', filename='js/wow.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css') }}">
+    <!-- Scrollify-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
+    {# 특정 페이지에서만 사용되는 스타일 시트가 있는 페이지에서 사용됨 #}
+    {% block head %}{% endblock %}
+</head>
 
-{% block head %}
-{% endblock %}
-
-{% block content %}
-<main class="flex-shrink-0">
-    <div class="d-flex justify-content-center wow fadeInLeft" style="padding:200px 0 10px 0 !important;">
-        <img src="{{ url_for('static', filename='img/teiren-color-logo.png') }}" class="about-img">
-    </div>
-    <!-- About Teiren-->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3 wow fadeInUp">
-                <div class="text-center mb-3">
-                    <span class="text-teiren fs-3 d-inline">테이렌 소개</span><br>
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">About Teiren</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
-                    <span class="fs-6 fw-bold">
-                        Teiren은 Terabyte+Siren의 합성어로, 테라바이트(TB) 단위의 데이터를 분석해 고객에게 최고의 Siren이 되자는 의미를 담은 보안 소프트웨어
-                        전문기업입니다. 구성원 모두 대한민국 최고의 차세대 보안 인재 양성 프로그램 Best Of the Best(BoB) 수료생으로, 기업의 보안성 향상을 위해,
-                        고객의 사이버 보안 난제를 해결하기 위해, 보안 담당자의 업무 부담감을 해결하기 위해 설립된 회사입니다.
-                    </span>
-                </div>
-                <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
-                    <span class="fs-6 fw-bold">
-                        설립 초기부터 다양한 보안 담당자들의 어려움에 귀를 기울였으며, 현재는 실제적으로 이 어려움을 해결하기 위해 Graph DB라는 선진 기술을 적용해 SIEM이라는
-                        보안 솔루션을 제공하고 있습니다.Teiren을 통해 안전한 세상을 만나보세요.
-                    </span>
-                </div>
+<body>
+    <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
+        <div class="nav-content">
+            <a class="navbar-brand" href="{{ url_for('index.index') }}">
+                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:55px; margin-top:-15px;">
+                <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.index') }}">홈</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.about') }}">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.siem') }}">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.inquirement') }}">문의</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-globe small"></i> 언어
+                        </a>
+                        <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='kr') }}">한국어</a>
+                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='en') }}">English</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!-- Team -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3 wow fadeInUp">
-                    <span class="text-teiren fs-3 d-inline">팀 구성</span><br>
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">Team</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column">
-                    <div class="ceo wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="align-items-center team-box">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Sungyeon Kim.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>김성연 |</span>
-                                <span class="team-pos fw-bold">대표</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Sungyeon Kim</span>
-                            </div>
-                            <div class="team-info">
-                                <span>
-                                    서울여자대학교 정보보호학과 <br>
-                                    BoB 11기 보안컨설팅 <br>
-                                    프론트엔드 개발
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="member wow fadeInUp">
-                        <div class="align-items-center team-box wow fadeInUp">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Yuwon Sung.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>성유원 |</span>
-                                <span class="team-pos fw-bold">개발자</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Yuwon Sung</span>
-                            </div>
-                            <div class="team-info">
-                                <span>
-                                    대구대학교 컴퓨터정보공학부 <br>
-                                    BoB 11기 보안제품개발 <br>
-                                    백엔드 | 머신러닝 개발
-                                </span>
-                            </div>
-                        </div>
-                        <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Hyunkyung Lee.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>이현경 |</span>
-                                <span class="team-pos fw-bold">연구원</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Hyunkyung Lee</span>
-                            </div>
-                            <div class="team-info">
-                                <span>
-                                    서울여자대학교 정보보호학과 <br>
-                                    BoB 11기 보안컨설팅 <br>
-                                    정책 개발 | 머신러닝 모델링
-                                </span>
-                            </div>
-                        </div>
-                        <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Somang Cho.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>조소망 |</span>
-                                <span class="team-pos fw-bold">연구원</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Somang Cho</span>
-                            </div>
-                            <div class="team-info">
-                                <span>
-                                    중앙대학교 산업보안학과 <br>
-                                    BoB 11기 보안컨설팅 <br>
-                                    데이터 시각화 | 해외 마케팅
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- Vison -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3 wow fadeInUp">
-                    <span class="text-teiren fs-3 d-inline">비전</span><br>
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">VISION</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
-                    <span class="fs-4 fw-bolder text-teiren">
-                        "보이지 않는 공격을 본다"
-                    </span>
-                </div>
-                <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
-                    <span class="fs-6 fw-bold">
-                        사이버 공격은 날이 갈수록 더 다양하고 고도화 되고 있습니다. Graph DB라는 선진 기술을 적용해 기업 자산에 위협이 발생하기 전에 위협을 탐지하고, 보이지 않는
-                        사이버 공격을 시각화 해 볼 수 있게 노력하겠습니다.
-                    </span>
-                </div>
-            </div>
+    </nav>
+    <main class="flex-shrink-0">
+        <div class="d-flex justify-content-center wow fadeInLeft" style="padding:200px 0 10px 0 !important;">
+            <img src="{{ url_for('static', filename='img/teiren-color-logo.png') }}" class="about-img">
         </div>
-    </section>
-    <!-- Goal -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3 wow fadeInUp">
-                    <span class="text-teiren fs-3 d-inline">목표</span><br>
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">GOAL</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+        <!-- About Teiren-->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3 wow fadeInUp">
+                    <div class="text-center mb-3">
+                        <span class="text-teiren fs-3 d-inline">테이렌 소개</span><br>
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">About Teiren</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="fs-6 fw-bold">
+                            Teiren은 Terabyte+Siren의 합성어로, 테라바이트(TB) 단위의 데이터를 분석해 고객에게 최고의 Siren이 되자는 의미를 담은 보안 소프트웨어
+                            전문기업입니다. 구성원 모두 대한민국 최고의 차세대 보안 인재 양성 프로그램 Best Of the Best(BoB) 수료생으로, 기업의 보안성 향상을 위해,
+                            고객의 사이버 보안 난제를 해결하기 위해, 보안 담당자의 업무 부담감을 해결하기 위해 설립된 회사입니다.
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
+                        <span class="fs-6 fw-bold">
+                            설립 초기부터 다양한 보안 담당자들의 어려움에 귀를 기울였으며, 현재는 실제적으로 이 어려움을 해결하기 위해 Graph DB라는 선진 기술을 적용해 SIEM이라는
+                            보안 솔루션을 제공하고 있습니다.Teiren을 통해 안전한 세상을 만나보세요.
+                        </span>
                     </div>
                 </div>
-                <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
-                    <span class="fs-4 fw-bolder text-teiren">
-                        "사이버 보안 난제를 해결해, 기업의 보안성 향상과 보안 인력의 업무 부담감을 낮춰주는 기업이 된다."
-                    </span>
+            </div>
+        </section>
+        <!-- Team -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3 wow fadeInUp">
+                        <span class="text-teiren fs-3 d-inline">팀 구성</span><br>
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">Team</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="ceo wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="align-items-center team-box">
+                                <div class="team-img-box">
+                                    <img src="{{ url_for('static', filename='img/Sungyeon Kim.png') }}" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>김성연 |</span>
+                                    <span class="team-pos fw-bold">대표</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Sungyeon Kim</span>
+                                </div>
+                                <div class="team-info">
+                                    <span>
+                                        서울여자대학교 정보보호학과 <br>
+                                        BoB 11기 보안컨설팅 <br>
+                                        프론트엔드 개발
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member wow fadeInUp">
+                            <div class="align-items-center team-box wow fadeInUp">
+                                <div class="team-img-box">
+                                    <img src="{{ url_for('static', filename='img/Yuwon Sung.png') }}" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>성유원 |</span>
+                                    <span class="team-pos fw-bold">개발자</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Yuwon Sung</span>
+                                </div>
+                                <div class="team-info">
+                                    <span>
+                                        대구대학교 컴퓨터정보공학부 <br>
+                                        BoB 11기 보안제품개발 <br>
+                                        백엔드 | 머신러닝 개발
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="team-img-box">
+                                    <img src="{{ url_for('static', filename='img/Hyunkyung Lee.png') }}" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>이현경 |</span>
+                                    <span class="team-pos fw-bold">연구원</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Hyunkyung Lee</span>
+                                </div>
+                                <div class="team-info">
+                                    <span>
+                                        서울여자대학교 정보보호학과 <br>
+                                        BoB 11기 보안컨설팅 <br>
+                                        정책 개발 | 머신러닝 모델링
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="team-img-box">
+                                    <img src="{{ url_for('static', filename='img/Somang Cho.png') }}" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>조소망 |</span>
+                                    <span class="team-pos fw-bold">연구원</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Somang Cho</span>
+                                </div>
+                                <div class="team-info">
+                                    <span>
+                                        중앙대학교 산업보안학과 <br>
+                                        BoB 11기 보안컨설팅 <br>
+                                        데이터 시각화 | 해외 마케팅
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
-                    <span class="fs-6 fw-bold">
-                        저희 테이렌은 안전한 세상을 위해 더욱 더 빠르고 고도화 된 보안 제품을 만들어 나갈 것 입니다. 고객의 목소리에 귀를 기울이며, 여러분들의 사이버 보안에 대한
-                        무거운 짐을 덜어줄 수 있도록 힘을 쏟겠습니다.
-                    </span>
+        </section>
+        <!-- Vison -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3 wow fadeInUp">
+                        <span class="text-teiren fs-3 d-inline">비전</span><br>
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">VISION</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="fs-4 fw-bolder text-teiren">
+                            "보이지 않는 공격을 본다"
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
+                        <span class="fs-6 fw-bold">
+                            사이버 공격은 날이 갈수록 더 다양하고 고도화 되고 있습니다. Graph DB라는 선진 기술을 적용해 기업 자산에 위협이 발생하기 전에 위협을 탐지하고, 보이지 않는
+                            사이버 공격을 시각화 해 볼 수 있게 노력하겠습니다.
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
-{% endblock %}
+        </section>
+        <!-- Goal -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3 wow fadeInUp">
+                        <span class="text-teiren fs-3 d-inline">목표</span><br>
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">GOAL</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="fs-4 fw-bolder text-teiren">
+                            "사이버 보안 난제를 해결해, 기업의 보안성 향상과 보안 인력의 업무 부담감을 낮춰주는 기업이 된다."
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text wow fadeInUp" data-wow-delay="0.4s">
+                        <span class="fs-6 fw-bold">
+                            저희 테이렌은 안전한 세상을 위해 더욱 더 빠르고 고도화 된 보안 제품을 만들어 나갈 것 입니다. 고객의 목소리에 귀를 기울이며, 여러분들의 사이버 보안에 대한
+                            무거운 짐을 덜어줄 수 있도록 힘을 쏟겠습니다.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer start -->
+        <section>
+            <footer class="bg-white py-4 mt-auto">
+                <div class="px-5 d-flex justify-content-center align-items-center">
+                    <div class="flex-column text-center">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" width="90vw">
+                        </div>
+                        <div class="col-auto mb-4">
+                            <div class="small m-0 fs-7">
+                                <span class="fw-bolder">㈜테이렌</span>&ensp;|&ensp;사업자등록번호 : 506-88-02727 &ensp;|&ensp;대표자명 :
+                                김성연&ensp;|&ensp;대표전화 : 010-6539-2122
+                                <br>서울특별시 구로구 디지털로31길 38-21, 409호(구로동, 이앤씨벤처드림타워3차)
+                                </br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small m-0">Copyright &copy; TEIREN 2023</div>
+                        </div>
+                        <!-- <div class="col-auto">
+                            <a class="small" href="#!">Privacy</a>
+                            <span class="mx-1">&middot;</span>
+                            <a class="small" href="#!">Terms</a>
+                            <span class="mx-1">&middot;</span>
+                            <a class="small" href="#!">Contact</a>
+                        </div> -->
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <!-- Footer end -->
+</body>
+
+</html>
