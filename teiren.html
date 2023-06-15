@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <body class="d-flex flex-column h-100 bg-light"> -->
+<main class="flex-shrink-0">
+    <!-- Header-->
+    <header>
+        <div class="px-5 bg-gradient-teiren justify-content-center">
+            <!-- Header content-->
+            <section>
+                <div id="logo-ani" class="wow fadeInRight">
+                    <div class="home-logo-img-box">
+                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}" class="home-logo-img">
+                    </div>
+                    <div class="text-center text-white fw-bolder home-logo wow fadeInRight">
+                        TEIREN
+                    </div>
+                </div>
+        </div>
+        </section>
+    </header>
+    <!-- About Teiren -->
+    <section class="container">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-10">
+                <div class="text-center justify-content-center mb-1">
+                    <div class="d-flex text-center justify-content-center wow fadeInUp">
+                        <div>
+                            <div class="fs-3 text-teiren">테이렌과 함께</div>
+                            <h2 class="mb-4 display-5 fw-bolder"><span class="text-teiren">보안을 쉽고 빠르게</span></h2>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-25" style="border-top: 5px solid var(--teiren); "></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-3 col justify-content-center mb-4 wow fadeInUp" data-wow-duration="0.7s">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/log_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">로그 관리</div>
+                                <div class="fw-normal fs-7">
+                                    다양한 시스템으로부터 로그 데이터를 수집하고, 수집된 데이터를 통합관리 기능
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center mb-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.7s">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/threat_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">위협 탐지</div>
+                                <div class="fw-normal fs-7">
+                                    Graph DB를 통한 향상된 성능의 보다 고도화된 위협 탐지 150여 개의 기본 정책 및 행위 흐름을 기반으로 위협 탐지 기능
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center align-items-center mb-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.7s">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/ueba_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">행위 분석</div>
+                                <div class="fw-normal fs-7">
+                                    사용자 행위 패턴의 유사도 측정을 통해 행위 간의 상관 관계 및 위협 분석 기능
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center align-items-center mb-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.7s">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/report_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">인증 보고서</div>
+                                <div class="fw-normal fs-7">
+                                    ISMS-P, 주정통 취약점 가이드 등 기업이 준수해야 하는 컴플라이언스를 위한 자동 매핑 보고서 기능
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="home-btn">
+                                <a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
+                                    href="{{ url_for('index.about') }}">Teiren 소개</a>
+                            </div>
+                            <div class="home-btn"><a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
+                                    href="{{ url_for('index.siem') }}">Teiren SIEM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About SIEM -->
+    <section class="container">
+        <div class="row gx-5 justify-content-center">
+            <div style="width: 75%">
+                <div class="text-center justify-content-center mb-1 wow fadeInUp">
+                    <div class="d-flex text-center justify-content-center">
+                        <div>
+                            <div class="fs-3 text-teiren">
+                                <span>What is SIEM? </span>
+                            </div>
+                            <h2 class="mb-4 display-5 fw-bolder"><span class="text-teiren">SIEM이란?</span></h2>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-50" style="border-top: 5px solid var(--teiren); "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center wow fadeInRight">
+                    <div class="fs-5 fw-bold">
+                        <p>
+                            <span>SIEM이란,
+                                <span class="text-teiren fw-bolder">Security Information & Event Management</span>
+                                (정보보안 이벤트 관리)의 약자로, 기업 자산에 대한
+                                <span class="text-teiren">*</span>
+                                로그 들을 모두 수집하고 통합해주는 솔루션입니다.</span>
+                        </p>
+                        <p>
+                            <span>
+                                클라우드 리소스, 애플리케이션, 외부 위협 요소 등 다양한 영역에서 위협을 탐지하는 것이 가능하며, SIEM이 위협, 취약점, 공격 또는 의심스러운
+                                행동이라 판단되는 부분이 발생하면 이에 대한 보고를 통해 즉각적인 대응이 가능하도록 합니다.
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-teiren fw-bolder">
+                                즉, SIEM은 다양한 영역에서 로그 데이터를 통합하여 분석해 통합적인 보안 체계를 제공해줍니다.
+                            </span>
+                        </p>
+                        <p>
+                            <span>
+                                최근에는 이에 대한 보안 관리까지 수행하는 제품들이 많이 나오게 되면서
+                                <span class="text-teiren fw-bolder">로그 수집 및 통합 뿐만 아니라 보안 관리까지</span>
+                                해주는 전반적인 솔루션을 SIEM이라 부르고 있습니다.
+                            </span>
+                        </p>
+
+                        <div class="text-end fs-8 text-teiren">
+                            <span>*로그 : 시스템을 사용한 내용 및 시간에 대한 모든 기록</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row gx-5 justify-content-center">
+                <div style="width:60%">
+                    <div class="text-center justify-content-center mb-1 wow fadeInUp">
+                        <div class="d-flex text-center justify-content-center">
+                            <div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-50" style="border-bottom: 3px solid var(--teiren); ">
+                                    </div>
+                                </div>
+                                <div class="fs-4 text-teiren">
+                                    <span>Why SIEM?</span>
+                                </div>
+                                <h2 class="mb-4 display-6 fw-bold"><span class="text-teiren">SIEM을 사용하는 이유</span>
+                                </h2>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-50" style="border-top: 3px solid var(--teiren); ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center mb-4">
+                        <div class="mt-2">
+                            <div class="wow fadeInUp">
+                                <div class="mb-2 fs-5 fw-bold text-teiren text-center">
+                                    <span>보안 담당자의 업무효율성</span>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+                                </div>
+                            </div>
+                            <div class="wow fadeInRight" data-wow-delay="0.3s">
+                                <p>
+                                    <span>
+                                        SIEM을 사용하는 주체인 보안 담당자의 입장에서 일일히 사내 시스템 및 다양한 보안장비의 데이터들을 관리하고 이에 대한 위협을 분석하는 것은
+                                        시간
+                                        소요가 많이 들고 비효율적인 부분입니다.
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        전체 시스템의 로그를 통합시키고 보안 관리를 해주는 SIEM은 보안 담당자의 업무 효율성을 증진시키고, 편리함을 제공해줄 수 있습니다.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="wow fadeInUp">
+                                <div class="mb-2 fs-5 fw-bold text-teiren text-center">
+                                    <span>법적 필수 요소 준수</span>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+                                </div>
+                            </div>
+                            <div class="wow fadeInRight" data-wow-delay="0.3s">
+                                <p>
+                                    <span>
+                                        개인정보안전성확보조치기준, 정보통신망법, GDPR 등의 법률에는 정기적인 로그 점검을 통해 안정적인 시스템 상태 유지 및 외부 공격 여부를
+                                        파악해야 함이 명시되어 있습니다.
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>
+                                        유럽 진출 기업의 경우, 기업 규모에 상관없이 GDPR 법이 적용되어 중소 기업도 로그 점검 및 외부 공격 여부 파악을 위한 SIEM이 필요할
+                                        수 있습니다.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+<script>
+    $(function () {
+        $(window).scrollTop(0);
+    })
+</script>
+{% endblock %}

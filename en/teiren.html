@@ -1,0 +1,233 @@
+{% extends '/en/base.html' %}
+{% block head %}
+{#
+효율적인 웹 폰트 불러오기
+- 사용되는 문자만 추려서 폰트 API로 요청함
+#}
+<!-- Scrollify-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
+{% endblock %}
+
+{% block content %}
+<!-- <body class="d-flex flex-column h-100 bg-light"> -->
+<main class="flex-shrink-0">
+    <!-- Header-->
+    <header>
+        <div class="px-5 bg-gradient-teiren justify-content-center">
+            <!-- Header content-->
+            <section>
+                <div id="logo-ani">
+                    <div class="home-logo-img-box">
+                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}" class="home-logo-img">
+                    </div>
+                    <div class="text-center text-white fw-bolder home-logo">
+                        TEIREN
+                    </div>
+                </div>
+        </div>
+        </section>
+    </header>
+    <!-- About Teiren-->
+    <section class="container">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-10">
+                <div class="text-center justify-content-center mb-1">
+                    <div class="d-flex text-center justify-content-center">
+                        <div>
+                            <div class="fs-3 text-teiren">Faster & Easier Security</div>
+                            <h2 class="mb-4 display-5 fw-bolder"><span class="text-teiren">with Teiren</span></h2>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-25" style="border-top: 5px solid var(--teiren); "></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-3 col justify-content-center mb-4">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/log_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">Log Management</div>
+                                <div class="fw-normal fs-7">
+                                    Collect log data from various systems and provide integrated management of data
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center mb-4">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/threat_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">Threat Detection</div>
+                                <div class="fw-normal fs-7">
+                                    Improved performance and more advanced threat detection with Graph DB<br>
+                                    (150 out-of-the-box policies)<br>
+                                    Detect threats based on behavior flow
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center align-items-center mb-4">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/ueba_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">UEBA</div>
+                                <div class="fw-normal fs-7">
+                                    Analyze the correlation and threats between behaviors by measuring the similarity of
+                                    user behavior patterns
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 justify-content-center align-items-center mb-4">
+                            <div id="circle">
+                                <img src="{{ url_for('static', filename='img/report_icon.png') }}">
+                            </div>
+                            <div class="text-center">
+                                <div class="fs-4 fw-bolder text-teiren mb-4">Compliance Report</div>
+                                <div class="fw-normal fs-7">
+                                    Provides automated mapping reports for compliance that enterprises must comply with
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="home-btn">
+                                <a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
+                                    href="{{ url_for('en.about') }}">About Teiren</a>
+                            </div>
+                            <div class="home-btn"><a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
+                                    href="{{ url_for('en.siem') }}">Teiren SIEM</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About SIEM -->
+    <section class="container">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-9">
+                <div class="text-center justify-content-center mb-1">
+                    <div class="d-flex text-center justify-content-center">
+                        <div>
+                            <h2 class="mb-4 display-5 fw-bolder"><span class="text-teiren">What is SIEM?</span></h2>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-50" style="border-top: 5px solid var(--teiren); "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="fs-5 fw-bold">
+                        <p>
+                            <span>SIEM stands for
+                                <span class="text-teiren fw-bolder">Security Information & Event Management</span>
+                                a solution that collects and integrates all
+                                <span class="text-teiren">*</span>
+                                logs about corporate assets.</span>
+                        </p>
+                        <p>
+                            <span>
+                                Threats can be detected in a variety of areas, including cloud resources, applications,
+                                and external threats. SIEM reports of threats, vulnerabilities, attacks, or suspicious
+                                behavior to enable immediate response.
+                            </span>
+                        </p>
+                        <p>
+                            <span class="text-teiren fw-bolder">
+                                In other words, SIEM provides an integrated security framework by integrating and
+                                analyzing log data in various areas.
+                            </span>
+                        </p>
+                        <p>
+                            <span>
+                                Recently, many products have been introduced to perform security management. The overall
+                                solution for
+                                <span class="text-teiren fw-bolder">security management as well as log collection and
+                                    integration</span>
+                                is called SIEM.
+                            </span>
+                        </p>
+                        <div class="text-end fs-8 text-teiren">
+                            <span>*Log : all records of what and when the system was used</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-7">
+                    <div class="text-center justify-content-center mb-1">
+                        <div class="d-flex text-center justify-content-center">
+                            <div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-50" style="border-bottom: 3px solid var(--teiren); ">
+                                    </div>
+                                </div>
+                                <h2 class="mb-4 display-6 fw-bold"><span class="text-teiren">Why Use SIEM?</span>
+                                </h2>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="mb-4 d-flex w-50" style="border-top: 3px solid var(--teiren); ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-around">
+                        <div class="mt-2">
+                            <div class="mb-2 fs-5 fw-bold text-teiren text-center">
+                                <span>Security Manager's Work Efficiency</span>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+                            </div>
+                            <p>
+                                <span>
+                                    From the perspective of security managers who use SIEM, managing data from
+                                    on-premises systems and various security equipment on a daily basis and analyzing
+                                    threats against it is time consuming and inefficient.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    SIEM, which integrates logs across the entire system and provides security
+                                    management, can improve the efficiency and convenience of security managers.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="mb-2 fs-5 fw-bold text-teiren text-center">
+                                <span>Compliance with Legal Requirements</span>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mb-4 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+                            </div>
+                            <p>
+                                <span>
+                                    Laws such as Privacy Measures, Information and Communication Network Act, and the
+                                    GDPR require regular log checks to maintain stable system status and identify
+                                    external attacks.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    For companies entering Europe, the GDPR law applies regardless of the size of the
+                                    company, so SMEs may also need SIEM to check logs and identify external attacks.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+<script>
+    $(function () {
+        $(window).scrollTop(0);
+    })
+</script>
+{% endblock %}

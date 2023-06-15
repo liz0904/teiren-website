@@ -1,0 +1,26 @@
+<nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
+    <div class="nav-content">
+        <a class="navbar-brand" href="{{ url_for('en.index') }}">
+            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:55px; margin-top:-15px;">
+            <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('en.index') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('en.about') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('en.siem') }}">Teiren SIEM</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('en.inquirement') }}">Contact</a></li>
+                <li class="nav-item dropdown small">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-globe small"></i> Language
+                    </a>
+                    <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='kr') }}">한국어</a>
+                        <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='en') }}">English</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

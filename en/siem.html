@@ -1,0 +1,227 @@
+{% extends '/en/base.html' %}
+{% block head %}
+<!-- Scrollify-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+<script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
+{% endblock %}
+
+{% block content %}
+<main class="flex-shrink-0">
+    <!-- Header-->
+    <header>
+        <div class="px-5 bg-gradient-teiren justify-content:center">
+            <section>
+                <div class="siem-img-card">
+                    <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}" class="siem-img">
+                </div>
+                <div class="px-5 py-5 d-flex flex-column">
+                    <div class="text-white fw-normal fs-3">
+                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}"
+                        style="width:60px; margin-right:-10px; margin-top:-5px">
+                        <span>Corporate Security Notes</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span class="display-1 text-white fw-bolder">Teiren SIEM</span><br>
+                    </div>
+                    <div class="text-white px-1">
+                        <span>Log correlation analysis threat detection solution that leverages Graph DB<br>for integrated security management of log enterprise systems</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+    <!-- Teiren SIEM-->
+    <div class="py-3 mb-4" style="padding:3rem">
+        <section class="d-flex justify-content-center align-items-center text-center">
+            <div class="px-5 my-3">
+                <div class="text-center mb-3">
+                    <h1 class="display-5 fw-bolder mb-0">
+                        <span class="text-teiren d-inline">Teiren SIEM</span>
+                    </h1>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                    </div>
+                </div>
+                <div class="siem-text">
+                    <span class="fs-6 fw-bold">
+                        Teiren SIEM provides optimized security and log management with improved performance and convenient visualization using Graph DB.<br>
+                        Use the best SIEMs that can address not only integrated log and event management of enterprise systems, but also security, asset management, 
+                        and compliance management.
+                    </span>
+                </div>
+            </div>
+        </section>
+        <!-- Features-->
+        <div id="features">
+            <!-- Sub Heading -->
+            <section>
+                <div class="text-center">
+                    <span class="text-teiren fs-5 d-inline">Features</span><br>
+                    <h2 class="fw-bolder mb-0">
+                        <span class="text-teiren d-inline">Main Features</span>
+                    </h2>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="my-3 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contents -->
+            <section>
+                <div id="dashboard" class="row justify-content-center mb-5">
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/dashboard.png') }}">
+                    </div>
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Dashboard</span>
+                        <span>Teiren SIEM dashboard allows you to monitor real-time threats by viewing the total number of logs 
+                            and threat logs, threat rates, and recent detection threats. 
+                            Also, Teiren SIEM provides real-time graphs of CPU/Memory/Network usage.</span>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="integration" class="row siem-reverse justify-content-center mb-5">
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Integrations</span>
+                        <span>You can integrate various clouds and systems by entering API keys.</span><br>
+                        <span class="fs-5 fw-bold text-premium">Integration List</span>
+                        <span>NCP ,NHN Cloud, AWS, Window Security Log,</span>
+                        <span>Jiran Security Office Keeper, etc</span>
+                    </div>
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/integration.png') }}">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="log" class="row justify-content-center mb-5">
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/log.png') }}">
+                    </div>
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Log Management</span>
+                        <span>It collects vast amounts of log data from various clouds and systems and integrates the collected log data into a table form on the web.</span>
+                        <span class="text-premium mt-2 fw-bold">JSON, Web Table + Filtering(for search)</span>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="threat" class="row siem-reverse justify-content-center mb-5">
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Threat Detection</span>
+                        <span>You can set security policies for threat detection. More than 150 out-of-the-box policies are provided, where simple threat detection is possible. 
+                            You can add policies directly to your environment with advanced settings. 
+                            Threats detected by the policy can be found on the Threat Alert page.</span>
+                    </div>
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/threat.png') }}">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="ueba" class="row justify-content-center mb-5">
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/ueba.png') }}">
+                    </div>
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">UEBA</span>
+                        <span class="text-teiren fs-6 mb-3">User and Entity Behavior Analytics</span>
+                        <span>
+                            Threats can be detected based on the flow of behavior, not just one anomaly. 
+                            Visualize and display the flow of user behavior to the threat at a glance when detecting the threat.</span>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="visual" class="row siem-reverse justify-content-center mb-5">
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Visualization</span>
+                        <span>Visualize user behavior at a glance. You can see what flow the detected threat is through 
+                            and how it relates to the other actions of the user who caused the threat, which allows you to correlate between them.</span>
+                        <span class="text-premium mt-2 fw-bold">Detect threats through user behavior pattern-based machine learning</span>
+                    </div>
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/visual.png') }}">
+                    </div>
+                </div>
+            </section>
+            <section>                                                  
+                <div id="report" class="row justify-content-center mb-5">
+                    <div class="col-7 d-flex justify-content-center align-items-center">
+                        <img src="{{ url_for('static', filename='img/report.png') }}">
+                    </div>
+                    <div class="col-5 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                        <span class="text-teiren fw-bold fs-2 mb-3">Compliance Report</span>
+                        <span>Provides compliance certification reports. 
+                            It automatically maps compliance items that the enterprise is complying with or must comply with, 
+                            and provides proof of this in a captured version of the report in pdf format.</span>
+                        <span class="text-premium mt-2 fw-bold"> Comliance Report(ISMS-P, CSAP, etc), 
+                            Summary report and Excel report on logs detected by threats, interlocking status, etc </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Why Teiren SIEM?-->
+    <section class="my-5">
+        <!-- Sub Heading -->
+        <div class="text-center mb-1">
+            <h2 class="fw-bolder mb-0">
+                <span class="text-teiren d-inline">Why Teiren SIEM?</span>
+            </h2>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="my-3 d-flex w-10" style="border-top: 2px solid var(--teiren); "></div>
+            </div>
+        </div>
+        <!-- Contents -->
+        <div class="row justify-content-around" style="padding:0 2rem">
+            <!-- content 1-->
+            <div class="col-3 text-center d-flex flex-column align-items-center mt-4">
+                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                <div class="fw-bold fs-4 text-teiren my-2">
+                    <span>Advanced threat detection</span>
+                </div>
+                <div class="w-80 text-start fs-7">
+                    <p class="pb-3">Using Graph DB, Teiren SIEM can analyze based on the relationship between logs to perform more advanced threat detection.</p>
+                    <p>Interworking between systems enables integrated security management through correlation analysis of the entire system and assets.</p>
+                </div>
+            </div>
+            <!-- content 2-->
+            <div class="col-3 text-center d-flex flex-column align-items-center mt-4">
+                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                <div class="fw-bold fs-4 text-teiren my-2">
+                    <span>Increase work efficiency</span>
+                </div>
+                <div class="w-80 text-start fs-7">
+                    <p class="pb-3">In addition to multi-cloud environments, security solutions, systems, and more can be integrated to manage multiple environments simultaneously with just one SIEM.
+                    </p>
+                    <p>In addition, compliance reports on security certification can help improve the efficiency of security managers.</p>
+                </div>
+            </div>
+            <!-- content 3-->
+            <div class="col-3 text-center d-flex flex-column align-items-center mt-4">
+                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                <div class="fw-bold fs-4 text-teiren my-2">
+                    <span>Applicable to your company</span>
+                </div>
+                <div class="w-80 text-start fs-7">
+                    <p class="pb-3">Teiren SIEM supports Korean clouds(Naver,NHN, KT Cloud, etc) that currently lack support.</p>
+                    <p>Teiren SIEM can be applied not just to SMEs, but also to major information and communication infrastructures in the country.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Download-->
+        <div>
+            <div class="container d-flex justify-content-center px-5 my-5">
+                <a href="{{ url_for('static', filename= 'pdf/[Brochure]Teiren SIEM.pdf') }}" target="_blank" download="[Brochure]Teiren SIEM">
+                    <button type="button" class="btn btn-outline-teiren btn-lg">
+                        Download Brochure&ensp;
+                        <i class="fas fa-download"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+    </div>
+</main>
+{% endblock %}
