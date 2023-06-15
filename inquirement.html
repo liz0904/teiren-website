@@ -1,11 +1,57 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block head %}
-<!-- Mail -->
-<script src="{{ url_for ('static', filename='js/mail.js')}}"></script>
-{% endblock %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <title>테이렌 TEIREN</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/teiren-icon.png') }}" />
+    <!-- Custom NAVER font-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="{{ url_for('static', filename='css/teiren.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Teiren js-->
+    <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+    <!-- Wow.js-->
+    <script src="{{ url_for('static', filename='js/wow.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css') }}">
+    <!-- Scrollify-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
+</head>
 
-{% block content %}
+<body>
+    <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
+        <div class="nav-content">
+            <a class="navbar-brand" href="{{ url_for('index.index') }}">
+                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:55px; margin-top:-15px;">
+                <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.index') }}">홈</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.about') }}">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.siem') }}">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.inquirement') }}">문의</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-globe small"></i> 언어
+                        </a>
+                        <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='kr') }}">한국어</a>
+                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='en') }}">English</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
 <main class="flex-shrink-0">
     <!-- Page content-->
     <header>
@@ -61,4 +107,37 @@
         </div>
     </header>
 </main>
-{% endblock %}
+
+        <!-- Footer start -->
+        <section>
+            <footer class="bg-white py-4 mt-auto">
+                <div class="px-5 d-flex justify-content-center align-items-center">
+                    <div class="flex-column text-center">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" width="90vw">
+                        </div>
+                        <div class="col-auto mb-4">
+                            <div class="small m-0 fs-7">
+                                <span class="fw-bolder">㈜테이렌</span>&ensp;|&ensp;사업자등록번호 : 506-88-02727 &ensp;|&ensp;대표자명 :
+                                김성연&ensp;|&ensp;대표전화 : 010-6539-2122
+                                <br>서울특별시 구로구 디지털로31길 38-21, 409호(구로동, 이앤씨벤처드림타워3차)
+                                </br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small m-0">Copyright &copy; TEIREN 2023</div>
+                        </div>
+                        <!-- <div class="col-auto">
+                            <a class="small" href="#!">Privacy</a>
+                            <span class="mx-1">&middot;</span>
+                            <a class="small" href="#!">Terms</a>
+                            <span class="mx-1">&middot;</span>
+                            <a class="small" href="#!">Contact</a>
+                        </div> -->
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <!-- Footer end -->
+</body>
+</html>
