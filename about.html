@@ -6,47 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <title>테이렌 TEIREN</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/teiren-icon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="/img/teiren-icon.png" />
     <!-- Custom NAVER font-->
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
     <!-- Style -->
-    <link href="{{ url_for('static', filename='css/teiren.css') }}" rel="stylesheet" />
+    <link href="/css/teiren.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Teiren js-->
-    <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+    <script src="/js/navbar.js"></script>
     <!-- Wow.js-->
-    <script src="{{ url_for('static', filename='js/wow.min.js')}}"></script>
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css') }}">
-    <!-- Scrollify-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
-    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
-    {# 특정 페이지에서만 사용되는 스타일 시트가 있는 페이지에서 사용됨 #}
-    {% block head %}{% endblock %}
+    <script src="/js/wow.min.js"></script>
+    <link rel="stylesheet" href="/css/animate.css">
 </head>
 
 <body>
     <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
         <div class="nav-content">
-            <a class="navbar-brand" href="{{ url_for('index.index') }}">
-                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:55px; margin-top:-15px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/teiren_logo.png" style="width:55px; margin-top:-15px;">
                 <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.index') }}">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.about') }}">소개</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.siem') }}">Teiren SIEM</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.inquirement') }}">문의</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="siem.html">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inquirement.html">문의</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-globe small"></i> 언어
                         </a>
                         <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='kr') }}">한국어</a>
-                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='en') }}">English</a>
+                            <a class="dropdown-item" href="/index.html">한국어</a>
+                            <a class="dropdown-item" href="/en/index.html">English</a>
                         </div>
                     </li>
                 </ul>
@@ -55,7 +50,7 @@
     </nav>
     <main class="flex-shrink-0">
         <div class="d-flex justify-content-center wow fadeInLeft" style="padding:200px 0 10px 0 !important;">
-            <img src="{{ url_for('static', filename='img/teiren-color-logo.png') }}" class="about-img">
+            <img src="/img/teiren-color-logo.png" class="about-img">
         </div>
         <!-- About Teiren-->
         <section>
@@ -103,7 +98,7 @@
                         <div class="ceo wow fadeInUp" data-wow-delay="0.3s">
                             <div class="align-items-center team-box">
                                 <div class="team-img-box">
-                                    <img src="{{ url_for('static', filename='img/Sungyeon Kim.png') }}" class="team-img">
+                                    <img src="/img/Sungyeon Kim.png" class="team-img">
                                 </div>
                                 <div class="team-name fw-bolder">
                                     <span>김성연 |</span>
@@ -124,7 +119,7 @@
                         <div class="member wow fadeInUp">
                             <div class="align-items-center team-box wow fadeInUp">
                                 <div class="team-img-box">
-                                    <img src="{{ url_for('static', filename='img/Yuwon Sung.png') }}" class="team-img">
+                                    <img src="/img/Yuwon Sung.png" class="team-img">
                                 </div>
                                 <div class="team-name fw-bolder">
                                     <span>성유원 |</span>
@@ -143,7 +138,7 @@
                             </div>
                             <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="team-img-box">
-                                    <img src="{{ url_for('static', filename='img/Hyunkyung Lee.png') }}" class="team-img">
+                                    <img src="/img/Hyunkyung Lee.png" class="team-img">
                                 </div>
                                 <div class="team-name fw-bolder">
                                     <span>이현경 |</span>
@@ -162,7 +157,7 @@
                             </div>
                             <div class="align-items-center team-box wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="team-img-box">
-                                    <img src="{{ url_for('static', filename='img/Somang Cho.png') }}" class="team-img">
+                                    <img src="/img/Somang Cho.png" class="team-img">
                                 </div>
                                 <div class="team-name fw-bolder">
                                     <span>조소망 |</span>
@@ -245,7 +240,7 @@
                 <div class="px-5 d-flex justify-content-center align-items-center">
                     <div class="flex-column text-center">
                         <div class="d-flex justify-content-center mb-3">
-                            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" width="90vw">
+                            <img src="/img/teiren_logo.png" width="90vw">
                         </div>
                         <div class="col-auto mb-4">
                             <div class="small m-0 fs-7">
@@ -258,13 +253,6 @@
                         <div class="col-auto">
                             <div class="small m-0">Copyright &copy; TEIREN 2023</div>
                         </div>
-                        <!-- <div class="col-auto">
-                            <a class="small" href="#!">Privacy</a>
-                            <span class="mx-1">&middot;</span>
-                            <a class="small" href="#!">Terms</a>
-                            <span class="mx-1">&middot;</span>
-                            <a class="small" href="#!">Contact</a>
-                        </div> -->
                     </div>
                 </div>
             </footer>
