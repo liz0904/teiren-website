@@ -1,16 +1,53 @@
-{% extends '/en/base.html' %}
-{% block head %}
-{#
-효율적인 웹 폰트 불러오기
-- 사용되는 문자만 추려서 폰트 API로 요청함
-#}
-<!-- Scrollify-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
-    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>TEIREN</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../img/teiren-icon.png" />
+    <!-- Custom NAVER font-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="../css/teiren.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Teiren js-->
+    <script src="../js/navbar.js"></script>
+</head>
 
-{% block content %}
-<!-- <body class="d-flex flex-column h-100 bg-light"> -->
+<body>
+    <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
+        <div class="nav-content">
+            <a class="navbar-brand" href="index.html">
+                <img src="../img/teiren_logo.png" style="width:55px; margin-top:-15px;">
+                <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="siem.html">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inquirement.html">Contact</a></li>
+                    <li class="nav-item dropdown small">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-globe small"></i> Language
+                        </a>
+                        <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../index.html">한국어</a>
+                            <a class="dropdown-item" href="index.html">English</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
 <main class="flex-shrink-0">
     <!-- Header-->
     <header>
@@ -19,7 +56,7 @@
             <section>
                 <div id="logo-ani">
                     <div class="home-logo-img-box">
-                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}" class="home-logo-img">
+                        <img src="../img/teiren-white-icon.png" class="home-logo-img">
                     </div>
                     <div class="text-center text-white fw-bolder home-logo">
                         TEIREN
@@ -45,7 +82,7 @@
                     <div class="row justify-content-around">
                         <div class="col-3 col justify-content-center mb-4">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/log_icon.png') }}">
+                                <img src="../img/log_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">Log Management</div>
@@ -56,7 +93,7 @@
                         </div>
                         <div class="col-3 justify-content-center mb-4">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/threat_icon.png') }}">
+                                <img src="../img/threat_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">Threat Detection</div>
@@ -69,7 +106,7 @@
                         </div>
                         <div class="col-3 justify-content-center align-items-center mb-4">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/ueba_icon.png') }}">
+                                <img src="../img/ueba_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">UEBA</div>
@@ -81,7 +118,7 @@
                         </div>
                         <div class="col-3 justify-content-center align-items-center mb-4">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/report_icon.png') }}">
+                                <img src="../img/report_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">Compliance Report</div>
@@ -93,10 +130,10 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="home-btn">
                                 <a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
-                                    href="{{ url_for('en.about') }}">About Teiren</a>
+                                    href="about.html">About Teiren</a>
                             </div>
                             <div class="home-btn"><a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
-                                    href="{{ url_for('en.siem') }}">Teiren SIEM</a>
+                                    href="siem.html">Teiren SIEM</a>
                             </div>
 
                         </div>
@@ -225,9 +262,36 @@
         </section>
     </section>
 </main>
-<script>
-    $(function () {
-        $(window).scrollTop(0);
-    })
-</script>
-{% endblock %}
+
+        <!-- Footer start -->
+        <section>
+            <footer class="bg-white py-4 mt-auto">
+                <div class="px-5 d-flex justify-content-center align-items-center">
+                    <div class="flex-column text-center">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/teiren_logo.png" width="90vw">
+                        </div>
+                        <div class="col-auto mb-4">
+                            <div class="small m-0 fs-7">
+                                <span class="fw-bolder">Teiren Co.</span>&ensp;|&ensp;Business registration number : 506-88-02727 &ensp;|&ensp;CEO :
+                                SungYeon Kim&ensp;|&ensp;contact KR: +82 010-6539-2122
+                                <br>Room 409, 38-21, Digital-ro 31-gil, Guro-gu, Seoul, Republic of Korea(Guro-dong, E&C Venture Dream Tower 3rd Building)</br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small m-0">Copyright &copy; TEIREN 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <!-- Footer end -->
+
+        <script>
+            $(function () {
+                $(window).scrollTop(0);
+            })
+        </script>
+</body>
+</html>
+    
