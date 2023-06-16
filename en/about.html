@@ -1,198 +1,266 @@
-{% extends '/en/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>TEIREN</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../img/teiren-icon.png" />
+    <!-- Custom NAVER font-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="../css/teiren.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Teiren js-->
+    <script src="../js/navbar.js"></script>
+</head>
 
-
-{% block head %}
-{% endblock %}
-
-{% block content %}
-<main class="flex-shrink-0">
-    <div class="d-flex justify-content-center" style="padding:200px 0 10px 0 !important;">
-        <img src="{{ url_for('static', filename='img/teiren-color-logo.png') }}" class="about-img">
-    </div>
-    <!-- About Teiren-->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3">
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">About Teiren</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="text-center about-text">
-                    <span class="fs-6 fw-bold">
-                        Teiren is a combination of Tera Byte+Siren, a security software solution that analyzes data in
-                        terabytes (TB) to become the best Siren for customers.
-                        All of the members are graduates of Korea's best next-generation security talent training
-                        program Best Of the Best (BoB), which was established
-                        to improve corporate security, solve customers' cybersecurity challenges, and solve the burden
-                        of security personnel.
-                    </span>
-                </div>
-                <div class="text-center mt-3 about-text">
-                    <span class="fs-6 fw-bold">
-                        Since its inception, Teiren has been listening to the challenges of various security personnel,
-                        and in practice,
-                        Teiren is now providing a security solution called SIEM by applying an advanced technology
-                        called Graph DB to address these challenges.
-                        Meet the Safe World with Teiren.
-                    </span>
-                </div>
+<body>
+    <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
+        <div class="nav-content">
+            <a class="navbar-brand" href="index.html">
+                <img src="../img/teiren_logo.png" style="width:55px; margin-top:-15px;">
+                <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="siem.html">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inquirement.html">Contact</a></li>
+                    <li class="nav-item dropdown small">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-globe small"></i> Language
+                        </a>
+                        <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../index.html">한국어</a>
+                            <a class="dropdown-item" href="index.html">English</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!-- Team -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3">
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">Team</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column">
-                    <div class="ceo">
-                        <div class="align-items-center team-box">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Sungyeon Kim.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>Sungyeon Kim |</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>CEO</span>
-                            </div>
-                            <div class="team-info-eng">
-                                <span>
-                                    Bachelor's Degree of Information Security<br>
-                                    <span style="font-size: 0.8rem;">in Seoul Woman's University</span> <br>
-                                    BoB 11th Security Consulting <br>
-                                    Front-end Development
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="member">
-                        <div class="align-items-center team-box">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Yuwon Sung.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>Yuwon Sung |</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Developer</span>
-                            </div>
-                            <div class="team-info-eng">
-                                <span>
-                                    Bachelor's Degree of Computer Information Engineering<br>
-                                    <span style="font-size: 0.8rem;">in Daegu University</span> <br>
-                                    BoB 11th Security Production Development <br>
-                                    Back-end Development | Machine Learning
-                                </span>
-                            </div>
-                        </div>
-                        <div class="align-items-center team-box">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Hyunkyung Lee.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>Hyunkyung Lee |</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Researcher</span>
-                            </div>
-                            <div class="team-info-eng">
-                                <span>
-                                    Bachelor's Degree of Information Security<br>
-                                    <span style="font-size: 0.8rem;">in Seoul Woman's University</span> <br>
-                                    BoB 11th Security Consulting <br>
-                                    Policy Development | Machine Learning
-                                </span>
-                            </div>
-                        </div>
-                        <div class="align-items-center team-box">
-                            <div class="team-img-box">
-                                <img src="{{ url_for('static', filename='img/Somang Cho.png') }}" class="team-img">
-                            </div>
-                            <div class="team-name fw-bolder">
-                                <span>Somang Cho |</span>
-                            </div>
-                            <div class="team-eng fw-normal">
-                                <span>Researcher</span>
-                            </div>
-                            <div class="team-info-eng">
-                                <span>
-                                    Bachelor's Degree of Industrial Security<br>
-                                    <span style="font-size: 0.8rem;">in ChungAng University</span> <br>
-                                    BoB 11th Security Consulting <br>
-                                    Data Visualization | Foreign Sales
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- Vison -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3">
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">VISION</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
-                    </div>
-                </div>
-                <div class="text-center about-text">
-                    <span class="fs-4 fw-bolder text-teiren">
-                        "Visualize the Invisible"
-                    </span>
-                </div>
-                <div class="text-center mt-3 about-text">
-                    <span class="fs-6 fw-bold">
-                        Cyberattacks are becoming more diverse and sophisticated by the day.
-                        We will apply an advanced technology called Graph DB
-                        to detect threats before they occur to corporate assets and to visualize invisible cyber
-                        attacks.
-                    </span>
-                </div>
-            </div>
+    </nav>
+
+    <main class="flex-shrink-0">
+        <div class="d-flex justify-content-center" style="padding:200px 0 10px 0 !important;">
+            <img src="../img/teiren-color-logo.png" class="about-img">
         </div>
-    </section>
-    <!-- Goal -->
-    <section>
-        <div class="px-5 d-flex justify-content-center align-items-center">
-            <div class="px-1 my-3">
-                <div class="text-center mb-3">
-                    <h1 class="display-5 fw-bolder mb-0">
-                        <span class="text-teiren d-inline">GOAL</span>
-                    </h1>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+        <!-- About Teiren-->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3">
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">About Teiren</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text">
+                        <span class="fs-6 fw-bold">
+                            Teiren is a combination of Tera Byte+Siren, a security software solution that analyzes data in
+                            terabytes (TB) to become the best Siren for customers.
+                            All of the members are graduates of Korea's best next-generation security talent training
+                            program Best Of the Best (BoB), which was established
+                            to improve corporate security, solve customers' cybersecurity challenges, and solve the burden
+                            of security personnel.
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text">
+                        <span class="fs-6 fw-bold">
+                            Since its inception, Teiren has been listening to the challenges of various security personnel,
+                            and in practice,
+                            Teiren is now providing a security solution called SIEM by applying an advanced technology
+                            called Graph DB to address these challenges.
+                            Meet the Safe World with Teiren.
+                        </span>
                     </div>
                 </div>
-                <div class="text-center about-text">
-                    <span class="fs-4 fw-bolder text-teiren">
-                        "By solving cybersecurity challenges, Teiren becomes a company that improves the security of
-                        companies and lowers the burden on customers."
-                    </span>
+            </div>
+        </section>
+        <!-- Team -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3">
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">Team</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="ceo">
+                            <div class="align-items-center team-box">
+                                <div class="team-img-box">
+                                    <img src="../img/Sungyeon Kim.png" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>Sungyeon Kim |</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>CEO</span>
+                                </div>
+                                <div class="team-info-eng">
+                                    <span>
+                                        Bachelor's Degree of Information Security<br>
+                                        <span style="font-size: 0.8rem;">in Seoul Woman's University</span> <br>
+                                        BoB 11th Security Consulting <br>
+                                        Front-end Development
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <div class="align-items-center team-box">
+                                <div class="team-img-box">
+                                    <img src="../img/Yuwon Sung.png" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>Yuwon Sung |</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Developer</span>
+                                </div>
+                                <div class="team-info-eng">
+                                    <span>
+                                        Bachelor's Degree of Computer Information Engineering<br>
+                                        <span style="font-size: 0.8rem;">in Daegu University</span> <br>
+                                        BoB 11th Security Production Development <br>
+                                        Back-end Development | Machine Learning
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="align-items-center team-box">
+                                <div class="team-img-box">
+                                    <img src="../img/Hyunkyung Lee.png" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>Hyunkyung Lee |</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Researcher</span>
+                                </div>
+                                <div class="team-info-eng">
+                                    <span>
+                                        Bachelor's Degree of Information Security<br>
+                                        <span style="font-size: 0.8rem;">in Seoul Woman's University</span> <br>
+                                        BoB 11th Security Consulting <br>
+                                        Policy Development | Machine Learning
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="align-items-center team-box">
+                                <div class="team-img-box">
+                                    <img src="../img/Somang Cho.png" class="team-img">
+                                </div>
+                                <div class="team-name fw-bolder">
+                                    <span>Somang Cho |</span>
+                                </div>
+                                <div class="team-eng fw-normal">
+                                    <span>Researcher</span>
+                                </div>
+                                <div class="team-info-eng">
+                                    <span>
+                                        Bachelor's Degree of Industrial Security<br>
+                                        <span style="font-size: 0.8rem;">in ChungAng University</span> <br>
+                                        BoB 11th Security Consulting <br>
+                                        Data Visualization | Foreign Sales
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center mt-3 about-text">
-                    <span class="fs-6 fw-bold">
-                        We, Teiren, will create faster and more advanced security products for a safe world.
-                        We will listen to our customers and work hard to ease the burden of your cybersecurity.
-                    </span>
+        </section>
+        <!-- Vison -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3">
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">VISION</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text">
+                        <span class="fs-4 fw-bolder text-teiren">
+                            "Visualize the Invisible"
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text">
+                        <span class="fs-6 fw-bold">
+                            Cyberattacks are becoming more diverse and sophisticated by the day.
+                            We will apply an advanced technology called Graph DB
+                            to detect threats before they occur to corporate assets and to visualize invisible cyber
+                            attacks.
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
-{% endblock %}
+        </section>
+        <!-- Goal -->
+        <section>
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="px-1 my-3">
+                    <div class="text-center mb-3">
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-teiren d-inline">GOAL</span>
+                        </h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="my-4 d-flex w-10" style="border-top: 5px solid var(--teiren); "></div>
+                        </div>
+                    </div>
+                    <div class="text-center about-text">
+                        <span class="fs-4 fw-bolder text-teiren">
+                            "By solving cybersecurity challenges, Teiren becomes a company that improves the security of
+                            companies and lowers the burden on customers."
+                        </span>
+                    </div>
+                    <div class="text-center mt-3 about-text">
+                        <span class="fs-6 fw-bold">
+                            We, Teiren, will create faster and more advanced security products for a safe world.
+                            We will listen to our customers and work hard to ease the burden of your cybersecurity.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer start -->
+        <section>
+            <footer class="bg-white py-4 mt-auto">
+                <div class="px-5 d-flex justify-content-center align-items-center">
+                    <div class="flex-column text-center">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/teiren_logo.png" width="90vw">
+                        </div>
+                        <div class="col-auto mb-4">
+                            <div class="small m-0 fs-7">
+                                <span class="fw-bolder">Teiren Co.</span>&ensp;|&ensp;Business registration number : 506-88-02727 &ensp;|&ensp;CEO :
+                                SungYeon Kim&ensp;|&ensp;contact KR: +82 010-6539-2122
+                                <br>Room 409, 38-21, Digital-ro 31-gil, Guro-gu, Seoul, Republic of Korea(Guro-dong, E&C Venture Dream Tower 3rd Building)</br>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small m-0">Copyright &copy; TEIREN 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <!-- Footer end -->
+</body>
+</html>
+    

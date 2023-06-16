@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <title>테이렌 TEIREN</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/img/teiren-icon.png" />
+    <link rel="icon" type="image/x-icon" href="img/teiren-icon.png" />
     <!-- Custom NAVER font-->
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
     <!-- Style -->
-    <link href="/css/teiren.css" rel="stylesheet" />
+    <link href="css/teiren.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Teiren js-->
-    <script src="/js/navbar.js"></script>
+    <script src="js/navbar.js"></script>
     <!-- Wow.js-->
-    <script src="/js/wow.min.js"></script>
-    <link rel="stylesheet" href="/css/animate.css">
+    <script src="js/wow.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
     <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
         <div class="nav-content">
             <a class="navbar-brand" href="index.html">
-                <img src="/img/teiren_logo.png" style="width:55px; margin-top:-15px;">
+                <img src="img/teiren_logo.png" style="width:55px; margin-top:-15px;">
                 <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
             </a>
             <div class="collapse navbar-collapse">
@@ -40,8 +40,8 @@
                             <i class="fa-solid fa-globe small"></i> 언어
                         </a>
                         <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/index.html">한국어</a>
-                            <a class="dropdown-item" href="/en/index.html">English</a>
+                            <a class="dropdown-item" href="index.html">한국어</a>
+                            <a class="dropdown-item" href="en/index.html">English</a>
                         </div>
                     </li>
                 </ul>
@@ -56,7 +56,7 @@
             <section>
                 <div id="logo-ani" class="wow fadeInRight">
                     <div class="home-logo-img-box">
-                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}" class="home-logo-img">
+                        <img src="img/teiren-white-icon.png" class="home-logo-img">
                     </div>
                     <div class="text-center text-white fw-bolder home-logo wow fadeInRight">
                         TEIREN
@@ -82,7 +82,7 @@
                     <div class="row justify-content-around">
                         <div class="col-3 col justify-content-center mb-4 wow fadeInUp" data-wow-duration="0.7s">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/log_icon.png') }}">
+                                <img src="img/log_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">로그 관리</div>
@@ -93,7 +93,7 @@
                         </div>
                         <div class="col-3 justify-content-center mb-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.7s">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/threat_icon.png') }}">
+                                <img src="img/threat_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">위협 탐지</div>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-3 justify-content-center align-items-center mb-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.7s">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/ueba_icon.png') }}">
+                                <img src="img/ueba_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">행위 분석</div>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-3 justify-content-center align-items-center mb-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.7s">
                             <div id="circle">
-                                <img src="{{ url_for('static', filename='img/report_icon.png') }}">
+                                <img src="img/report_icon.png">
                             </div>
                             <div class="text-center">
                                 <div class="fs-4 fw-bolder text-teiren mb-4">인증 보고서</div>
@@ -127,10 +127,10 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="home-btn">
                                 <a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
-                                    href="{{ url_for('index.about') }}">Teiren 소개</a>
+                                    href="about.html">Teiren 소개</a>
                             </div>
                             <div class="home-btn"><a class="btn btn-outline-teiren btn-lg px-5 py-3 fw-bolder m-5"
-                                    href="{{ url_for('index.siem') }}">Teiren SIEM</a>
+                                    href="siem.html">Teiren SIEM</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                 <div class="px-5 d-flex justify-content-center align-items-center">
                     <div class="flex-column text-center">
                         <div class="d-flex justify-content-center mb-3">
-                            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" width="90vw">
+                            <img src="img/teiren_logo.png" width="90vw">
                         </div>
                         <div class="col-auto mb-4">
                             <div class="small m-0 fs-7">

@@ -6,47 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
     <title>테이렌 TEIREN</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/teiren-icon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="img/teiren-icon.png" />
     <!-- Custom NAVER font-->
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
     <!-- Style -->
-    <link href="{{ url_for('static', filename='css/teiren.css') }}" rel="stylesheet" />
+    <link href="css/teiren.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Teiren js-->
-    <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+    <script src="js/navbar.js"></script>
     <!-- Wow.js-->
-    <script src="{{ url_for('static', filename='js/wow.min.js')}}"></script>
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css') }}">
-    <!-- Scrollify-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
-    <script src="{{ url_for('static', filename='js/scrollify.js') }}"></script> -->
-    {# 특정 페이지에서만 사용되는 스타일 시트가 있는 페이지에서 사용됨 #}
-    {% block head %}{% endblock %}
+    <script src="js/wow.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
     <nav class="navbar justify-content-center navbar-expand bg-white py-3 fixed-top">
         <div class="nav-content">
-            <a class="navbar-brand" href="{{ url_for('index.index') }}">
-                <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:55px; margin-top:-15px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/teiren_logo.png" style="width:55px; margin-top:-15px;">
                 <span class="fw-bolder text-teiren" style="font-size:30px;">TEIREN</span>
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.index') }}">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.about') }}">소개</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.siem') }}">Teiren SIEM</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index.inquirement') }}">문의</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="siem.html">Teiren SIEM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inquirement.html">문의</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-globe small"></i> 언어
                         </a>
                         <div class="dropdown-menu small" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='kr') }}">한국어</a>
-                            <a class="dropdown-item" href="{{ url_for('lang.lang', url=url, lang='en') }}">English</a>
+                            <a class="dropdown-item" href="index.html">한국어</a>
+                            <a class="dropdown-item" href="en/index.html">English</a>
                         </div>
                     </li>
                 </ul>
@@ -59,12 +54,12 @@
             <div class="px-5 bg-gradient-teiren justify-content:center">
                 <section>
                     <div class="siem-img-card">
-                        <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}"
+                        <img src="img/teiren-white-icon.png"
                             class="siem-img wow fadeInRight">
                     </div>
                     <div class="px-5 py-5 d-flex flex-column wow fadeInRight">
                         <div class="text-white fw-normal fs-3">
-                            <img src="{{ url_for('static', filename='img/teiren-white-icon.png') }}"
+                            <img src="img/teiren-white-icon.png"
                                 style="width:60px; margin-right:-10px; margin-top:-5px">
                             <span>기업의 보안 오답노트</span>
                         </div>
@@ -121,7 +116,7 @@
                 <section>
                     <div id="dashboard" class="row justify-content-center mb-5 wow fadeInUp">
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/dashboard.png') }}">
+                            <img src="img/dashboard.png">
                         </div>
                         <div class="col-5 d-flex align-items-center text-center p-5">
                             <div class="d-flex flex-column wow fadeInUp" data-wow-delay="0.4s">
@@ -146,14 +141,14 @@
                             </div>
                         </div>
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/integration.png') }}">
+                            <img src="img/integration.png">
                         </div>
                     </div>
                 </section>
                 <section>
                     <div id="log" class="row justify-content-center mb-5 wow fadeInUp">
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/log.png') }}">
+                            <img src="img/log.png">
                         </div>
                         <div class="col-5 d-flex align-items-center text-center p-5">
                             <div class="d-flex flex-column wow fadeInUp" data-wow-delay="0.4s">
@@ -175,14 +170,14 @@
                             </div>
                         </div>
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/threat.png') }}">
+                            <img src="img/threat.png">
                         </div>
                     </div>
                 </section>
                 <section>
                     <div id="ueba" class="row justify-content-center mb-5 wow fadeInUp">
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/ueba.png') }}">
+                            <img src="img/ueba.png">
                         </div>
                         <div class="col-5 d-flex align-items-center text-center p-5">
                             <div class="d-flex flex-column wow fadeInUp" data-wow-delay="0.4s">
@@ -204,14 +199,14 @@
                             </div>
                         </div>
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/visual.png') }}">
+                            <img src="img/visual.png">
                         </div>
                     </div>
                 </section>
                 <section>
                     <div id="report" class="row justify-content-center mb-5 wow fadeInUp">
                         <div class="col-7 d-flex justify-content-center align-items-center wow fadeInUp">
-                            <img src="{{ url_for('static', filename='img/report.png') }}">
+                            <img src="img/report.png">
                         </div>
                         <div class="col-5 d-flex align-items-center text-center p-5">
                             <div class="d-flex flex-column wow fadeInUp" data-wow-delay="0.4s">
@@ -242,7 +237,7 @@
             <div class="row justify-content-around" style="padding:0 2rem">
                 <!-- content 1-->
                 <div class="col-3 text-center d-flex flex-column align-items-center mt-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                    <img src="img/teiren_logo.png" style="width:6vw">
                     <div class="fw-bold fs-4 text-teiren my-2">
                         <span>고도화된 위협 탐지</span>
                     </div>
@@ -253,7 +248,7 @@
                 </div>
                 <!-- content 2-->
                 <div class="col-3 text-center d-flex flex-column align-items-center mt-4 wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                    <img src="img/teiren_logo.png" style="width:6vw">
                     <div class="fw-bold fs-4 text-teiren my-2">
                         <span>업무 효율성 증진</span>
                     </div>
@@ -265,7 +260,7 @@
                 </div>
                 <!-- content 3-->
                 <div class="col-3 text-center d-flex flex-column align-items-center mt-4 wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" style="width:6vw">
+                    <img src="img/teiren_logo.png" style="width:6vw">
                     <div class="fw-bold fs-4 text-teiren my-2">
                         <span>자사 적용 가능</span>
                     </div>
@@ -278,7 +273,7 @@
             <!-- Download-->
             <div>
                 <div class="container d-flex justify-content-center px-5 my-5">
-                    <a href="{{ url_for('static', filename= 'pdf/[브로슈어]Teiren SIEM.pdf') }}" target="_blank"
+                    <a href="pdf/[브로슈어]Teiren SIEM.pdf" target="_blank"
                         download="[브로슈어]Teiren SIEM">
                         <button type="button" class="btn btn-outline-teiren btn-lg">
                             소개 자료 다운받기&ensp;
@@ -290,36 +285,36 @@
         </section>
         </div>
     </main>
-        <!-- Footer start -->
-        <section>
-            <footer class="bg-white py-4 mt-auto">
-                <div class="px-5 d-flex justify-content-center align-items-center">
-                    <div class="flex-column text-center">
-                        <div class="d-flex justify-content-center mb-3">
-                            <img src="{{ url_for('static', filename='img/teiren_logo.png') }}" width="90vw">
-                        </div>
-                        <div class="col-auto mb-4">
-                            <div class="small m-0 fs-7">
-                                <span class="fw-bolder">㈜테이렌</span>&ensp;|&ensp;사업자등록번호 : 506-88-02727 &ensp;|&ensp;대표자명 :
-                                김성연&ensp;|&ensp;대표전화 : 010-6539-2122
-                                <br>서울특별시 구로구 디지털로31길 38-21, 409호(구로동, 이앤씨벤처드림타워3차)
-                                </br>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="small m-0">Copyright &copy; TEIREN 2023</div>
-                        </div>
-                        <!-- <div class="col-auto">
-                            <a class="small" href="#!">Privacy</a>
-                            <span class="mx-1">&middot;</span>
-                            <a class="small" href="#!">Terms</a>
-                            <span class="mx-1">&middot;</span>
-                            <a class="small" href="#!">Contact</a>
-                        </div> -->
+       <!-- Footer start -->
+       <section>
+        <footer class="bg-white py-4 mt-auto">
+            <div class="px-5 d-flex justify-content-center align-items-center">
+                <div class="flex-column text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <img src="img/teiren_logo.png" width="90vw">
                     </div>
+                    <div class="col-auto mb-4">
+                        <div class="small m-0 fs-7">
+                            <span class="fw-bolder">㈜테이렌</span>&ensp;|&ensp;사업자등록번호 : 506-88-02727 &ensp;|&ensp;대표자명 :
+                            김성연&ensp;|&ensp;대표전화 : 010-6539-2122
+                            <br>서울특별시 구로구 디지털로31길 38-21, 409호(구로동, 이앤씨벤처드림타워3차)
+                            </br>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="small m-0">Copyright &copy; TEIREN 2023</div>
+                    </div>
+                    <!-- <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Contact</a>
+                    </div> -->
                 </div>
-            </footer>
-        </section>
-        <!-- Footer end -->
+            </div>
+        </footer>
+    </section>
+    <!-- Footer end -->
 </body>
 </html>
